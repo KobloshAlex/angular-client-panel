@@ -1,5 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+
+import { FlashMessagesModule } from "angular2-flash-messages";
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
@@ -41,6 +44,8 @@ import { AppRoutingModule } from "./app-routing.module";
     AngularFireModule.initializeApp(environment.firebaseConfig, "clientpanel"),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FormsModule,
+    FlashMessagesModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
