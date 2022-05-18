@@ -4,6 +4,7 @@ import { FlashMessagesService } from "angular2-flash-messages";
 import { ClientService } from "../../services/client.service";
 import { Router } from "@angular/router";
 import { LEVEL, FLASH_MESSAGE } from "../../flashes/flashes";
+import { ValidationService } from "../../services/validation.service";
 
 @Component({
   selector: "app-add-client",
@@ -24,6 +25,7 @@ export class AddClientComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private clientService: ClientService,
+    private validationService: ValidationService,
     private router: Router
   ) {}
 
@@ -44,6 +46,6 @@ export class AddClientComponent implements OnInit {
   }
 
   emailValidation(): RegExp {
-    return RegExp(`^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$`);
+    return this.validationService.validateEmail();
   }
 }

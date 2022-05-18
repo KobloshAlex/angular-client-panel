@@ -3,6 +3,7 @@ import { Client } from "../../models/Client";
 import { ClientService } from "../../services/client.service";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { ActivatedRoute, Router } from "@angular/router";
+import { FLASH_MESSAGE, LEVEL } from "../../flashes/flashes";
 
 @Component({
   selector: "app-client-details",
@@ -35,5 +36,16 @@ export class ClientDetailsComponent implements OnInit {
     });
   }
 
-  onDeleteClick(): void {}
+  onDeleteClick(): void {
+    if (confirm("Are you sure?")) {
+      this.clientService.deleteClient(this.client);
+      this.flashMessage.show(FLASH_MESSAGE.USER_DELETED, LEVEL.WARNING);
+      this.router.navigate(["/"]).catch(console.error);
+    }
+  }
+
+  updateBalance(): void {
+    this.clientService.updateClient(this.client);
+    this.flashMessage.show(FLASH_MESSAGE.BALANCE_UPDATED, LEVEL.WARNING);
+  }
 }

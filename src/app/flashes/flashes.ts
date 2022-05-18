@@ -22,4 +22,7 @@ export const LEVEL = Object.freeze({
 export const FLASH_MESSAGE = Object.freeze({
   USER_VALIDATION_REJECT: "Please fill out the form correctly",
   USER_CREATED: "New Client added",
+  USER_UPDATED: "Client information successfully updated",
+  USER_DELETED: "Client information successfully deleted",
+  BALANCE_UPDATED: "Balance has been updated",
 });

@@ -22,6 +22,8 @@ import { RegisterComponent } from "./components/register/register.component";
 import { SettingsComponent } from "./components/settings/settings.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { AppRoutingModule } from "./app-routing.module";
+import { ClientService } from "./services/client.service";
+import { ValidationService } from "./services/validation.service";
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { AppRoutingModule } from "./app-routing.module";
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [],
+  providers: [ClientService, ValidationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
