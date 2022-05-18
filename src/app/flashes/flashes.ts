@@ -24,5 +24,6 @@ export const FLASH_MESSAGE = Object.freeze({
   USER_CREATED: "New Client added",
   USER_UPDATED: "Client information successfully updated",
   USER_DELETED: "Client information successfully deleted",
+  USER_LOGIN: "You are now logged in",
   BALANCE_UPDATED: "Balance has been updated",
 });
