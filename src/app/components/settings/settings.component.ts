@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { SettingsService } from "../../services/settings.service";
 import { FlashMessagesService } from "angular2-flash-messages";
-import { Router } from "@angular/router";
 import { Settings } from "../../models/Settings";
 import { FLASH_MESSAGE, LEVEL } from "../../flashes/flashes";
 
@@ -16,7 +15,6 @@ export class SettingsComponent implements OnInit {
   constructor(
     private settingService: SettingsService,
     private flashMessage: FlashMessagesService,
-    private router: Router
   ) {}
 
   ngOnInit(): void {
