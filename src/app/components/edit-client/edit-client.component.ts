@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Client } from "../../models/Client";
 import { ValidationService } from "../../services/validation.service";
 import { FLASH_MESSAGE, LEVEL } from "../../flashes/flashes";
+import { SettingsService } from "../../services/settings.service";
 
 @Component({
   selector: "app-edit-client",
@@ -20,11 +21,12 @@ export class EditClientComponent implements OnInit {
     phone: "",
     balance: 0,
   };
-  disableBalanceOnEdit: boolean = true;
+  disableBalanceOnEdit: boolean;
 
   constructor(
     private clientService: ClientService,
     private validationService: ValidationService,
+    private settingService: SettingsService,
     private flashMessage: FlashMessagesService,
     private router: Router,
     private route: ActivatedRoute
@@ -34,6 +36,7 @@ export class EditClientComponent implements OnInit {
     //get id from url
     this.id = this.route.snapshot.params["id"];
     this.clientService.getClient(this.id).subscribe((client) => (this.client = client));
+    this.disableBalanceOnEdit = this.settingService.getSettings().disableBalanceOnEdit;
   }
 
   onSubmit({ value, valid }: { value: Client; valid: boolean }) {

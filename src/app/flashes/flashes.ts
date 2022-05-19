@@ -25,5 +25,7 @@ export const FLASH_MESSAGE = Object.freeze({
   USER_UPDATED: "Client information successfully updated",
   USER_DELETED: "Client information successfully deleted",
   USER_LOGIN: "You are now logged in",
+  NEW_USER_REGISTRATION: "You are now registered and logged in",
+  SETTINGS_SAVED: "Settings has been saved",
   BALANCE_UPDATED: "Balance has been updated",
 });

@@ -25,6 +25,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ClientService } from "./services/client.service";
 import { ValidationService } from "./services/validation.service";
 import { AuthService } from "./services/auth.service";
+import { SettingsService } from "./services/settings.service";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { AuthService } from "./services/auth.service";
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ClientService, ValidationService, AuthService],
+  providers: [ClientService, ValidationService, AuthService, SettingsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
