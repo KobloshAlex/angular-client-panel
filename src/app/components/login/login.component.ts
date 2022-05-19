@@ -3,7 +3,6 @@ import { AuthService } from "../../services/auth.service";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { Router } from "@angular/router";
 import { FLASH_MESSAGE, LEVEL } from "../../flashes/flashes";
-import { error } from "protractor";
 
 @Component({
   selector: "app-login",
